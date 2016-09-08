@@ -10,6 +10,10 @@ namespace LinqPractice
     {
         static void Main(string[] args)
         {
+            if(args.Length < 1)
+            {
+                Console.WriteLine("No Prarameter, Please input correct parameter, it inlcude: OrderBy, ");
+            }
 
             List<string> list = new List<string>();
             foreach(string a in Constants.examplewords)
@@ -17,11 +21,16 @@ namespace LinqPractice
                 list.Add(a);
             }
 
-
-
-
-            OrderBy show = new OrderBy();
-            show.runDome(list);
+            try
+            {
+                LinqBase demo = LinqService.getInstance().CreateLinq(args[0]);
+                demo.runDome(list);
+            }
+            catch
+            {
+                Console.WriteLine("Error Prarameter, the support parameter only inlcude: OrderBy, ");
+            }
+            
         }
     }
 }
