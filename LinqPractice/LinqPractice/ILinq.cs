@@ -8,6 +8,6 @@ namespace LinqPractice
 {
     public interface ILinq
     {
-        IEnumerable<T> runLinq<T>(IEnumerable<T> list);
+        void runLinq(object list);
     }
 }

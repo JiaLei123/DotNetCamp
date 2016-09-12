@@ -9,5 +9,12 @@ namespace LinqPractice
     class Constants
     {
         public static string[] examplewords = new[] { "the", "quick", "brown", "fox", "jumps" };
+        public static int[] exampleints = new int[] { 35, 44, 200, 84, 3987, 4, 199, 329, 446, 208 };
+        public static string[] examplstatement = new[] { "an apple a day", "the quick brown fox" };
+        public const string orderby = "orderby";
+        public const string where = "where";
+        public const string select = "select";
+        public const string groupby = "groupby";
+        public const string covert = "covert";
     }
 }

@@ -12,25 +12,18 @@ namespace LinqPractice
         {
             if(args.Length < 1)
             {
-                Console.WriteLine("No Prarameter, Please input correct parameter, it inlcude: OrderBy, ");
-            }
-
-            List<string> list = new List<string>();
-            foreach(string a in Constants.examplewords)
-            {
-                list.Add(a);
+                Console.WriteLine("No Prarameter, Please input correct parameter, it inlcude: OrderBy, Where, Select.");
             }
 
             try
             {
                 LinqBase demo = LinqService.getInstance().CreateLinq(args[0]);
-                demo.runDome(list);
+                demo.runDome();
             }
             catch
             {
-                Console.WriteLine("Error Prarameter, the support parameter only inlcude: OrderBy, ");
-            }
-            
+                Console.WriteLine("Error Prarameter, the support parameter only inlcude: OrderBy, Where, Select.");
+            }  
         }
     }
 }

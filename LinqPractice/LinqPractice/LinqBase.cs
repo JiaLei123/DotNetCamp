@@ -8,22 +8,36 @@ namespace LinqPractice
 {
     abstract class LinqBase : ILinq
     {
-        public void runDome<T>(IEnumerable<T> list)
+        public object Demodata;
+        public abstract object prepareDemoData();
+        public abstract void runLinq(object list);
+
+        public void runDome()
         {
-            PrintArray(list);
-            var result = runLinq(list);
-            PrintArray(result);
+            Demodata = prepareDemoData();
+            runLinq(Demodata);
         }
 
-        protected void PrintArray<T>(IEnumerable<T> list)
+        protected void PrintArray<T>(string message, IEnumerable<T> list)
         {
-            foreach(T t in list)
+            Console.WriteLine(message + ": ");
+            int i = 0;
+            foreach (T t in list)
             {
-                Console.Write(t.ToString() + ", ");
+                if (i < list.Count() - 1)
+                {
+                    Console.Write(t.ToString() + ", ");
+                }
+                else
+                {
+                    Console.Write(t.ToString());
+                }
+                i++;
+
             }
             Console.WriteLine();
         }
 
-        public abstract IEnumerable<T> runLinq<T>(IEnumerable<T> list);
+
     }
 }
