@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinqPractice
 {
-    abstract class LinqBase : ILinq
+    public abstract class LinqBase : ILinq
     {
         public object Demodata;
         public abstract object prepareDemoData();

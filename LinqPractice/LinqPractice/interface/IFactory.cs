@@ -6,12 +6,8 @@ using System.Threading.Tasks;
 
 namespace LinqPractice
 {
-    class Sample<T>
+    public interface IFactory
     {
-        public T obj;
-        public Sample(T obj)
-        {
-            this.obj = obj;
-        }      
+        List<LinqBase> Create();
     }
 }

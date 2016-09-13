@@ -43,5 +43,20 @@ namespace LinqPractice
             }
             return result;
         }
+
+        public List<LinqBase> CreateLinqFactory(string name)
+        {
+            string cmd = name.ToLower().Trim();
+            IFactory result;
+            switch (cmd)
+            {
+                case Constants.Simple:
+                    result = new SimpleQuery();
+                    break;
+                default:
+                    throw new Exception();
+            }
+            return result.Create();
+        }
     }
 }

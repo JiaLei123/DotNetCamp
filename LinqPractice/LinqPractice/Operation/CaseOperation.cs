@@ -10,6 +10,7 @@ namespace LinqPractice
     {
         public override object prepareDemoData()
         {
+            Console.WriteLine("Show Case Date Type: ");
             var plants = new Plant[]
             {
                 new CarnivorousPlant { Name = "Venus Fly Trap", TrapType = "Snap Trap" },

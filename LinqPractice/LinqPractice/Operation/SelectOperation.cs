@@ -10,6 +10,8 @@ namespace LinqPractice
     {
         public override object prepareDemoData()
         {
+            Console.WriteLine("Show Selection: ");
+
             List<IEnumerable<string>> result = new List<IEnumerable<string>>();
 
             List<string> list = new List<string>();

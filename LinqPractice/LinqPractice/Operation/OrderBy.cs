@@ -10,6 +10,7 @@ namespace LinqPractice
     {
         public override object prepareDemoData()
         {
+            Console.WriteLine("Show Order By: ");
             List<string> list = new List<string>();
             foreach (string a in Constants.examplewords)
             {

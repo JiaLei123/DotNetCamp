@@ -12,17 +12,31 @@ namespace LinqPractice
         {
             if(args.Length < 1)
             {
-                Console.WriteLine("No Prarameter, Please input correct parameter, it inlcude: OrderBy, Where, Select.");
+                Console.WriteLine("No Prarameter, Please input correct paramete.");
+                Console.WriteLine("the correct paramete are: LinqPractice:");
+                Console.WriteLine("-s orderby|where|selece|covert ");
+                Console.WriteLine("-g simple| ");
             }
 
             try
             {
-                LinqBase demo = LinqService.getInstance().CreateLinq(args[0]);
-                demo.runDome();
+                if(args[0] == "-s")
+                {
+                    LinqBase demo = LinqService.getInstance().CreateLinq(args[1]);
+                    demo.runDome();
+                }
+                else
+                {
+                    List<LinqBase> demo = LinqService.getInstance().CreateLinqFactory(args[1]);
+                    foreach (LinqBase cmd in demo)
+                    {
+                        cmd.runDome();
+                    }
+                }
             }
             catch
             {
-                Console.WriteLine("Error Prarameter, the support parameter only inlcude: OrderBy, Where, Select.");
+                Console.WriteLine("Error Prarameter happened.");
             }  
         }
     }

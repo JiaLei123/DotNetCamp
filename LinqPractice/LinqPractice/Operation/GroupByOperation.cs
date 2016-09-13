@@ -10,6 +10,7 @@ namespace LinqPractice
     {
         public override object prepareDemoData()
         {
+            Console.WriteLine("Show Group By: ");
             List<int> list = new List<int>();
             foreach (int a in Constants.exampleints)
             {
