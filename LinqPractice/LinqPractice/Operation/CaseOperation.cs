@@ -29,7 +29,6 @@ namespace LinqPractice
                          where a.TrapType == "Snap Trap"
                          select a;
             PrintArray("Demo thow the case the data type", result);
-
         }
 
         class Plant

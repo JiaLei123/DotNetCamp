@@ -41,7 +41,30 @@ namespace LinqPractice
 
             var result = from word in list
                          select (word as string).Substring(0, 1);
-            PrintArray("Select first letter", result);      
+            PrintArray("Select first letter", result);
+
+            var result2 = from word in list
+                         select string.Format("nuber is {0}", word);
+            PrintArray("Select first letter", result2);
+
+            var result3 = from word in list
+                          select new { Name = word, lenght = word.Length };
+
+            Console.WriteLine("Select multi result" + ": ");
+            int i = 0;
+            foreach (var t in result3)
+            {
+                if (i < list.Count() - 1)
+                {
+                    Console.Write(t.Name + t.lenght + ", ");
+                }
+                else
+                {
+                    Console.Write(t.Name + t.lenght);
+                }
+                i++;
+            }
+            Console.WriteLine();
 
             var result1 = from words in slist
                           from word1 in (words as string).Split(' ')

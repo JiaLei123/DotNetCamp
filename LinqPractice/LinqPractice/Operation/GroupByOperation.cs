@@ -31,6 +31,30 @@ namespace LinqPractice
             {
                 PrintArray("Splite the Int Array to", group);
             }
+
+
+            Console.WriteLine("Group with Embeded Query:");
+
+            var students = StudentClass.students;
+
+            var queryNestedGroups = from student in students
+                         group student by student.Year into newgroup1
+                         from newgroup2 in
+                         (from student in newgroup1 group student by student.LastName)
+                         group newgroup2 by newgroup1.Key;
+
+            foreach (var outerGroup in queryNestedGroups)
+            {
+                Console.WriteLine("DataClass.Student Level = {0}", outerGroup.Key);
+                foreach (var innerGroup in outerGroup)
+                {
+                    Console.WriteLine("\tNames that begin with: {0}", innerGroup.Key);
+                    foreach (var innerGroupElement in innerGroup)
+                    {
+                        Console.WriteLine("\t\t{0} {1}", innerGroupElement.LastName, innerGroupElement.FirstName);
+                    }
+                }
+            }
         }
     }
 }

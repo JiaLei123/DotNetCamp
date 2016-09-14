@@ -16,6 +16,7 @@ namespace LinqPractice
         {
             Demodata = prepareDemoData();
             runLinq(Demodata);
+            Console.WriteLine();
         }
 
         protected void PrintArray<T>(string message, IEnumerable<T> list)
@@ -33,11 +34,8 @@ namespace LinqPractice
                     Console.Write(t.ToString());
                 }
                 i++;
-
             }
             Console.WriteLine();
         }
-
-
     }
 }

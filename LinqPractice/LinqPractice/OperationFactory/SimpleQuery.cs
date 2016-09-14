@@ -16,6 +16,7 @@ namespace LinqPractice
             result.Add(new GroupByOperation());
             result.Add(new SelectOperation());
             result.Add(new CaseOperation());
+            result.Add(new JoinOperation());
             return result;
         }
     }
