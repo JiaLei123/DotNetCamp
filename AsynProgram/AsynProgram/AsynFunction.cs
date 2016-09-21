@@ -10,9 +10,34 @@ namespace AsynProgram
 {
     class AsynFunction : IDemo
     {
+
         private static readonly Stopwatch Watch = new Stopwatch();
+        private string subDemoType;
+
+        public AsynFunction()
+        {
+
+        }
+        public AsynFunction(string subDemo)
+        {
+            subDemoType = subDemo;
+        }
+
 
         public void runDemo()
+        {
+            switch (subDemoType)
+            {
+                case "simple":
+                    runSimpleDome();
+                    break;
+                default:
+                    runSimpleDome();
+                    break;
+            }
+        }
+
+        private void runSimpleDome()
         {
             Watch.Start();
 
@@ -35,6 +60,7 @@ namespace AsynProgram
 
             Console.Read();
         }
+
 
 
         private async Task<int> CountCharacterAsync(int id, string address)

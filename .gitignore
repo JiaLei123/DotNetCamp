@@ -1,6 +1,15 @@
 LinqPractice/LinqPractice/bin/
 LinqPractice/LinqPractice/obj/
-LinqPractice/.vs/LinqPractice/v14/.suo
+ParameterParseUtility/ParameterParseUtility/bin/
+ParameterParseUtility/ParameterParseUtility/obj/
 AsynProgram/AsynProgram/bin/
 AsynProgram/AsynProgram/obj/
-AsynProgram/.vs/AsynProgram/obj/v14/.suo
+ParameterParseUtility/TestResults/
+ParameterParseUtility/ParameterParseUtilityTests/obj/
+ParameterParseUtility/ParameterParseUtilityTests/bin/
+
+
+
+AsynProgram/.vs/
+LinqPractice/.vs/
+ParameterParseUtility/.vs/
