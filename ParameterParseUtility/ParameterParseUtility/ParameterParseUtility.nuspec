@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>jialei.dotnet.ParameterParseUtility</id>
+    <version>1.1.1.0</version>
+    <title>ParameterParse</title>
+    <authors>JiaLei</authors>
+    <owners>JiaLei</owners>
+    <licenseUrl>http://LICENSE_URL_HERE_OR_DELETE_THIS_LINE</licenseUrl>
+    <projectUrl>http://PROJECT_URL_HERE_OR_DELETE_THIS_LINE</projectUrl>
+    <iconUrl>http://ICON_URL_HERE_OR_DELETE_THIS_LINE</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Awesome application</description>
+    <releaseNotes>init version.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Parameter</tags>
+  </metadata>
+</package>

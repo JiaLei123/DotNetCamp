@@ -12,33 +12,51 @@ namespace ParameterParseUtility
         {
             List<Parameter> result = new List<Parameter>();
 
-            if(!string.IsNullOrEmpty(paraString))
+            if (!string.IsNullOrEmpty(paraString))
             {
-                string[] paraml = paraString.Split('-');
-                if(paraml.Length > 0)
+                string[] paraml = paraString.Split(' ');
+                result = ParseParameter(paraml);
+            }
+
+            return result;
+        }
+
+
+        public static List<Parameter> ParseParameter(string[] paraString)
+        {
+            List<Parameter> result = new List<Parameter>();
+            if (paraString != null && paraString.Length > 1)
+            {
+                for(int i =0; i < paraString.Length;i++)
                 {
-                    foreach(string a in paraml)
+                    string type = paraString[i];
+
+                    if (type.StartsWith("-"))
                     {
-                        if(!string.IsNullOrEmpty(a))
+                        if(paraString.Length > (i+1))
                         {
-                            string[] aParam = a.Split(' ');
-                            if (aParam.Length < 2)
+                            string value = paraString[i+1];
+                            if(!value.StartsWith("-"))
                             {
-                                Parameter param = new Parameter() { ParameterType = aParam[0], ParameterString = string.Empty };
-                                result.Add(param);
+                                Parameter para = new Parameter { ParameterType = type, ParameterString = value };
+                                result.Add(para);
+                                i++;
                             }
                             else
                             {
-                                Parameter param = new Parameter() { ParameterType = aParam[0], ParameterString = aParam[1] };
-                                result.Add(param);
+                                Parameter para = new Parameter { ParameterType = type, ParameterString = string.Empty };
+                                result.Add(para);
                             }
-
                         }
-
+                        else
+                        {
+                            Parameter para = new Parameter { ParameterType = type, ParameterString = string.Empty };
+                            result.Add(para);
+                        }
                     }
-                    
                 }
             }
+
 
             return result;
         }

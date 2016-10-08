@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ParameterParseUtility;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,10 +9,10 @@ namespace AsynProgram
 {
     class DemoFactory
     {
-        public static IDemo Creat(string type)
+        public static IDemo Creat(Parameter param)
         {
             IDemo result = null;
-            switch(type)
+            switch(param.ParameterType)
             {
                 case "-async":
                     result = new AsynFunction();
