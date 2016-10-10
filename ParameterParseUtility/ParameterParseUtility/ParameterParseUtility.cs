@@ -25,7 +25,7 @@ namespace ParameterParseUtility
         public static List<Parameter> ParseParameter(string[] paraString)
         {
             List<Parameter> result = new List<Parameter>();
-            if (paraString != null && paraString.Length > 1)
+            if (paraString != null && paraString.Length > 0)
             {
                 for(int i =0; i < paraString.Length;i++)
                 {

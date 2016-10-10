@@ -56,5 +56,22 @@ namespace ParameterParseUtility.Tests
                 }
             }
         }
+
+        [TestMethod()]
+        public void ParseParameterTest2()
+        {
+            string[] arges = { "-bgworker" };
+            var list = ParameterParseUtility.ParseParameter(arges);
+            Assert.IsTrue(list.Count == 1);
+            foreach (Parameter a in list)
+            {
+                if (a.ParameterType == "-bgworker")
+                {
+                    Assert.IsTrue(string.IsNullOrEmpty(a.ParameterString));
+                }
+            }
+        }
+
+        
     }
 }

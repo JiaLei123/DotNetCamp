@@ -8,6 +8,7 @@ namespace AsynProgram
 {
     interface IDemo
     {
+        
         void runDemo();
     }
 }

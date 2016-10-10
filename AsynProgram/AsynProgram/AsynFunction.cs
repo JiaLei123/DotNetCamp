@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace AsynProgram
 {
-    class AsynFunction : IDemo
+    class AsynFunction : DemoBase
     {
 
-        private static readonly Stopwatch Watch = new Stopwatch();
-        private string subDemoType;
+        
 
         public AsynFunction()
         {
@@ -24,21 +23,53 @@ namespace AsynProgram
         }
 
 
-        public void runDemo()
+        public override void runDemo()
         {
             switch (subDemoType)
             {
+
                 case "simple":
+                case "":
                     runSimpleDome();
+                    runSimpleDomeSync();
                     break;
                 default:
                     runSimpleDome();
                     break;
             }
         }
-
         private void runSimpleDome()
         {
+            Console.WriteLine($"Start runSimpleDome");
+
+            Watch.Start();
+
+            const string url1 = "http://www.cnblogs.com/";
+            const string url2 = "http://www.cnblogs.com/liqingwen/";
+
+            //两次调用 CountCharacters 方法（同步下载某网站内容，并统计字符的个数）
+            int t1 = CountCharacter(1, url1);
+            int t2 = CountCharacter(2, url2);
+
+            //三次调用 ExtraOperation 方法（主要是通过拼接字符串达到耗时操作）
+            for (var i = 0; i < 3; i++)
+            {
+                ExtraOperation(i + 1);
+            }
+
+            //控制台输出
+            Console.WriteLine($"{url1} char number：{t1}");
+            Console.WriteLine($"{url2} char number：{t2}");
+
+            printend();
+        }
+
+
+
+        private void runSimpleDomeSync()
+        {
+            Console.WriteLine($"Start runSimpleDomeSync");
+
             Watch.Start();
 
             const string url1 = "http://www.cnblogs.com/";
@@ -58,10 +89,18 @@ namespace AsynProgram
             Console.WriteLine($"{url1} char number：{t1.Result}");
             Console.WriteLine($"{url2} char number：{t2.Result}");
 
-            Console.Read();
+            printend();
         }
 
+        private int CountCharacter(int id, string address)
+        {
+            var wc = new WebClient();
+            Console.WriteLine($"Begin Inovke id = {id} : {Watch.ElapsedMilliseconds} ms");
+            var result = wc.DownloadString(address);
 
+            Console.WriteLine($"End Inovke id ={id} : {Watch.ElapsedMilliseconds} ms");
+            return result.Length;
+        }
 
         private async Task<int> CountCharacterAsync(int id, string address)
         {
@@ -71,18 +110,6 @@ namespace AsynProgram
 
             Console.WriteLine($"End Inovke id ={id} : {Watch.ElapsedMilliseconds} ms");
             return result.Length;
-        }
-
-        private static void ExtraOperation(int id)
-        {
-            var s = "";
-
-            for (var i = 0; i < 6000; i++)
-            {
-                s += i;
-            }
-
-            Console.WriteLine($"id = {id}  ExtraOperation function wend：{Watch.ElapsedMilliseconds} ms");
         }
     }
 }

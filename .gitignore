@@ -4,6 +4,7 @@ ParameterParseUtility/ParameterParseUtility/bin/
 ParameterParseUtility/ParameterParseUtility/obj/
 AsynProgram/AsynProgram/bin/
 AsynProgram/AsynProgram/obj/
+AsynProgram/packages/
 ParameterParseUtility/TestResults/
 ParameterParseUtility/ParameterParseUtilityTests/obj/
 ParameterParseUtility/ParameterParseUtilityTests/bin/
@@ -13,3 +14,4 @@ ParameterParseUtility/ParameterParseUtilityTests/bin/
 AsynProgram/.vs/
 LinqPractice/.vs/
 ParameterParseUtility/.vs/
+*.user
