@@ -15,7 +15,7 @@ namespace AsynProgram
             {
                 Console.WriteLine("No Prarameter, Please input correct paramete.");
                 Console.WriteLine("the correct paramete are: AsynProgram:");
-                Console.WriteLine("-async, -invoke, -thread, -bgworker");
+                Console.WriteLine("-async [simple|], -invoke[], -thread[], -bgworker[process|cancel]");
             }
 
             try
@@ -30,7 +30,7 @@ namespace AsynProgram
                 {
                     Console.WriteLine("wrong Prarameter format, Please input correct paramete.");
                     Console.WriteLine("the correct paramete are: AsynProgram:");
-                    Console.WriteLine("-async [simple|], -invoke[], -thread[], -bgworker[]");
+                    Console.WriteLine("-async [simple|], -invoke[], -thread[], -bgworker[process|cancel]");
                 }
 
             }
