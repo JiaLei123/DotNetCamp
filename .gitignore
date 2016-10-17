@@ -1,17 +1,20 @@
-LinqPractice/LinqPractice/bin/
-LinqPractice/LinqPractice/obj/
-ParameterParseUtility/ParameterParseUtility/bin/
-ParameterParseUtility/ParameterParseUtility/obj/
-AsynProgram/AsynProgram/bin/
-AsynProgram/AsynProgram/obj/
-AsynProgram/packages/
-ParameterParseUtility/TestResults/
-ParameterParseUtility/ParameterParseUtilityTests/obj/
-ParameterParseUtility/ParameterParseUtilityTests/bin/
+#LinqPractice/LinqPractice/bin/
+#LinqPractice/LinqPractice/obj/
+#ParameterParseUtility/ParameterParseUtility/bin/
+#ParameterParseUtility/ParameterParseUtility/obj/
+#AsynProgram/AsynProgram/bin/
+#AsynProgram/AsynProgram/obj/
+#AsynProgram/packages/
+#ParameterParseUtility/TestResults/
+#ParameterParseUtility/ParameterParseUtilityTests/obj/
+#ParameterParseUtility/ParameterParseUtilityTests/bin/
+#AsynProgram/.vs/
+#LinqPractice/.vs/
+#ParameterParseUtility/.vs/
 
+/**/bin/
+/**/obj/
+/**/.vs/
 
-
-AsynProgram/.vs/
-LinqPractice/.vs/
-ParameterParseUtility/.vs/
 *.user
+# temp

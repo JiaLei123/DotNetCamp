@@ -38,6 +38,7 @@ namespace AsynProgram
                     break;
             }
         }
+
         private void runSimpleDome()
         {
             Console.WriteLine($"Start runSimpleDome which not an sync method");

@@ -30,6 +30,8 @@ namespace AsynProgram
                 case "cancel":
                     runCancel();
                     break;
+                case "exception":
+                    break;
                 default:
                     runSimpleDome();
                     break;
