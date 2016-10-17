@@ -16,5 +16,15 @@
 /**/obj/
 /**/.vs/
 
+<<<<<<< HEAD
 *.user
 # temp
+=======
+
+AsynProgram/.vs/
+LinqPractice/.vs/
+ParameterParseUtility/.vs/
+*.user
+
+#merge new change
+>>>>>>> verison1.2
