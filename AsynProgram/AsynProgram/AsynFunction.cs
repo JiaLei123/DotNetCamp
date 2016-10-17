@@ -40,7 +40,7 @@ namespace AsynProgram
         }
         private void runSimpleDome()
         {
-            Console.WriteLine($"Start runSimpleDome");
+            Console.WriteLine($"Start runSimpleDome which not an sync method");
 
             Watch.Start();
 
@@ -63,8 +63,6 @@ namespace AsynProgram
 
             printend();
         }
-
-
 
         private void runSimpleDomeSync()
         {
