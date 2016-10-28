@@ -38,6 +38,33 @@ namespace AsynProgram
             }
         }
 
+        private void runException()
+        {
+            Watch.Restart();
+            Console.WriteLine($"Start run Exception Dome");
+            BackgroundWorker bk = new BackgroundWorker();
+            bk.WorkerSupportsCancellation = true;
+            bk.WorkerReportsProgress = true;
+            bk.ProgressChanged += DoworkProcessChanged;
+            bk.DoWork += DoworkProcessCancel;
+            bk.RunWorkerCompleted += DoWorkCompleted;
+            bk.RunWorkerAsync(100);
+
+            Thread.Sleep(6000);
+            bk.CancelAsync();
+            printend();
+        }
+
+        private void DoWorkCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Error != null)
+            {
+                Type errorType = e.Error.GetType();
+            }
+            throw new NotImplementedException();
+        }
+
+       
 
         private void runCancel()
         {
