@@ -12,5 +12,10 @@ namespace GenericityDemo
             get;
             set;
         }
+
+        public void add<T>() where T: new()
+        {
+            Name = Name + " Yes";
+        }
     }
 }
