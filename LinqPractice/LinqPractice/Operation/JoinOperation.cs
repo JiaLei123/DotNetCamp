@@ -20,7 +20,7 @@ namespace LinqPractice
                 list.Add(a);
             }
             result.Add(list);
-            PrintArray("original words are", list);
+            PrintArray("Original words in First String list are", list);
 
             List<string> slist = new List<string>();
             foreach (string a in Constants.examplewords1)
@@ -28,7 +28,7 @@ namespace LinqPractice
                 slist.Add(a);
             }
             result.Add(slist);
-            PrintArray("original words are", slist);
+            PrintArray("Original words in Second String list are", slist);
 
             return result;
         }

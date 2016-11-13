@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="interface\IFactory.cs" />
+    <Compile Include="OperationFactory\AdvanceQuery.cs" />
     <Compile Include="OperationFactory\SimpleQuery.cs" />
     <Compile Include="Operation\CaseOperation.cs" />
     <Compile Include="Constants.cs" />
+    <Compile Include="Operation\CollectionOperation.cs" />
     <Compile Include="Operation\GroupByOperation.cs" />
     <Compile Include="interface\ILinq.cs" />
     <Compile Include="Operation\JoinOperation.cs" />

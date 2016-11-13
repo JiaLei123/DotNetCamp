@@ -53,6 +53,9 @@ namespace LinqPractice
                 case Constants.Simple:
                     result = new SimpleQuery();
                     break;
+                case Constants.Adv:
+                    result = new AdvanceQuery();
+                    break;
                 default:
                     throw new Exception();
             }
