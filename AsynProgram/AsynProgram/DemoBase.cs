@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AsynProgram
 {
-    abstract class DemoBase : IDemo
+    public abstract class DemoBase : IDemo
     {
         protected string subDemoType;
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LinqPractice
 {
-    class LinqService
+    public class LinqService
     {
         private LinqService(){}
 
