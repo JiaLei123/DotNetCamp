@@ -14,7 +14,7 @@ namespace LinqPractice
             {
                 Console.WriteLine("No Prarameter, Please input correct paramete.");
                 Console.WriteLine("the correct paramete are: LinqPractice:");
-                Console.WriteLine("-s orderby|where|selece|covert ");
+                Console.WriteLine("-s orderby|where|selece|covert|groupby ");
                 Console.WriteLine("-g simple|adv ");
             }
 

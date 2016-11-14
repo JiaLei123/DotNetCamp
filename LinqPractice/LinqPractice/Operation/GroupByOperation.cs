@@ -55,6 +55,16 @@ namespace LinqPractice
                     }
                 }
             }
+
+
+            Console.WriteLine("Group with Select:");
+            var results = from number in list
+                          group number by number % 2 == 0
+                          into numbergroup
+                          select numbergroup.Sum();
+
+            PrintArray("Splite the Int Array to", results);
+
         }
     }
 }
