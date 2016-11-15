@@ -20,6 +20,7 @@ namespace LinqPractice
         public const string select = "select";
         public const string groupby = "groupby";
         public const string covert = "covert";
+        public const string collection = "collection";
         public const string Simple = "simple";
         public const string Adv = "adv";
     }

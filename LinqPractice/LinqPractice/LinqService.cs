@@ -21,6 +21,7 @@ namespace LinqPractice
         {
             string cmd = name.ToLower().Trim();
             LinqBase result;
+
             switch (cmd)
             {
                 case Constants.orderby:
@@ -37,6 +38,9 @@ namespace LinqPractice
                     break;
                 case Constants.covert:
                     result = new CaseOperation();
+                    break;
+                case Constants.collection:
+                    result = new CollectionOperation();
                     break;
                 default:
                     throw new Exception();
