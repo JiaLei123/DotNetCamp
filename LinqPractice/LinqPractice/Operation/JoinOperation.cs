@@ -45,11 +45,11 @@ namespace LinqPractice
                          select word;
             PrintArray("Select same words from two string array", result);
 
-            var a_result = list.Join(list1, p => p.Length, s => s.Length, (p, s) => new { p, s});
-            PrintArray("Select same words from two string array", a_result);
+            var a_result = list.Join(list1, p => p, s => s, (p, s) => new { p, s }).Select(n=>n.p);
+            PrintArray("Lamdba Select same words from two string array", a_result);
 
             var ab_result = list.Join(list1, p => p.Substring(0, 1), s => s.Substring(0, 1), (p, s) => new { p, s });
-            PrintArray("Select same words from two string array", ab_result);
+            PrintArray("Lamdba 2 Select same words from two string array", ab_result);
         }
     }
 }
