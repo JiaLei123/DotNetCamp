@@ -39,11 +39,17 @@ namespace LinqPractice
             IEnumerable<string> list = lists[0];
             IEnumerable<string> list1 = lists[1];
 
+            //从两个字符串列表中找到相同的字符串
             var result = from word in list
                          join word1 in list1 on word equals word1
                          select word;
-
             PrintArray("Select same words from two string array", result);
+
+            var a_result = list.Join(list1, p => p.Length, s => s.Length, (p, s) => new { p, s});
+            PrintArray("Select same words from two string array", a_result);
+
+            var ab_result = list.Join(list1, p => p.Substring(0, 1), s => s.Substring(0, 1), (p, s) => new { p, s });
+            PrintArray("Select same words from two string array", ab_result);
         }
     }
 }

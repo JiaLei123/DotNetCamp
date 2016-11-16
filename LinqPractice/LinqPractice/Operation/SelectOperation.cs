@@ -96,12 +96,29 @@ namespace LinqPractice
 
 
             // select from multi collecton 
+            //foreach(string words in slist)
+            //{
+            //    foreach(string word1 in words.Split(' '))
+            //    {
+
+            //    }
+            //}
+
             var result1 = from words in slist
                           from word1 in (words as string).Split(' ')
                           select word1;
             PrintArray("Select words from statement", result1);
 
-            //var a_result1 = slist.SelectMany(p)
+            var a_result1 = slist.SelectMany(p => p.Split(' '));
+            PrintArray("Lambda Select words from statement", a_result1);
+
+            var ab_result1 = slist.SelectMany(t => t.Split(' '), (t, s) => new { length = t.Length, fLetter = s.Substring(0,1)});
+            PrintArray("Lambda Select words from statement", ab_result1);
+
+            //找到有成绩大于90的学生的名字
+            var students = StudentClass.students;
+            var a_result4 = students.SelectMany(p => p.ExamScores, (p, s) => new { name =$"{p.FirstName} {p.LastName}", s }).Where(n => n.s >90).Select(r=>r.name).Distinct();
+            PrintArray("Lambda Select words from statement", a_result4);
         }
     }
 }

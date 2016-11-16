@@ -42,6 +42,9 @@ namespace LinqPractice
                 case Constants.collection:
                     result = new CollectionOperation();
                     break;
+                case Constants.join:
+                    result = new JoinOperation();
+                    break;
                 default:
                     throw new Exception();
             }

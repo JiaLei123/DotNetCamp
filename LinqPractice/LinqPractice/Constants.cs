@@ -21,6 +21,10 @@ namespace LinqPractice
         public const string groupby = "groupby";
         public const string covert = "covert";
         public const string collection = "collection";
+        public const string join = "join";
+
+
+
         public const string Simple = "simple";
         public const string Adv = "adv";
     }
