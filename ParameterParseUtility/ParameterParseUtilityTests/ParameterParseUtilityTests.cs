@@ -21,10 +21,12 @@ namespace ParameterParseUtility.Tests
             {
                 if (a.ParameterType == "-a")
                 {
+                    Assert.IsTrue(a.ParameterTypeTrim == "a");
                     Assert.IsTrue(a.ParameterString == "xxx");
                 }
                 if (a.ParameterType == "-b")
                 {
+                    Assert.IsTrue(a.ParameterTypeTrim == "b");
                     Assert.IsTrue(a.ParameterString == "xyz");
                 }
             }
@@ -40,18 +42,22 @@ namespace ParameterParseUtility.Tests
             {
                 if (a.ParameterType == "-a")
                 {
+                    Assert.IsTrue(a.ParameterTypeTrim == "a");
                     Assert.IsTrue(a.ParameterString == "xxx");
                 }
                 if (a.ParameterType == "-b")
                 {
+                    Assert.IsTrue(a.ParameterTypeTrim == "b");
                     Assert.IsTrue(a.ParameterString == "xyz");
                 }
                 if (a.ParameterType == "-c")
                 {
+                    Assert.IsTrue(a.ParameterTypeTrim == "c");
                     Assert.IsTrue(string.IsNullOrEmpty(a.ParameterString));
                 }
                 if (a.ParameterType == "-d")
                 {
+                    Assert.IsTrue(a.ParameterTypeTrim == "d");
                     Assert.IsTrue(string.IsNullOrEmpty(a.ParameterString));
                 }
             }

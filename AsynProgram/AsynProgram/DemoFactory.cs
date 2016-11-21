@@ -15,10 +15,10 @@ namespace AsynProgram
             switch(param.ParameterType)
             {
                 case "-async":
-                    result = new AsynFunction(param.ParameterString);
+                    result = new Asyn(param.ParameterString);
                     break;
                 case "-bgworker":
-                    result = new bgWorkerFunction(param.ParameterString);
+                    result = new bgWorker(param.ParameterString);
                     break;
                 default:
                     throw new Exception();

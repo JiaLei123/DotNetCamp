@@ -23,5 +23,13 @@ namespace ParameterParseUtility
             get;
             set;
         }
+
+        public string ParameterTypeTrim
+        {
+            get
+            {
+                return ParameterType.Substring(1, ParameterType.Length - 1);
+            }
+        }
     }
 }
