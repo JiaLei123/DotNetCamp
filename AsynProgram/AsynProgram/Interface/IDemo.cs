@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace AsynProgram
 {
-    interface IDemo
+    interface IAsyncDemo
     {
         
-        void runDemo();
+        void runSyncDemo();
     }
 }

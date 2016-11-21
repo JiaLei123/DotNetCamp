@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AsynProgram</RootNamespace>
     <AssemblyName>AsynProgram</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -47,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AsynFunction.cs" />
-    <Compile Include="bgWorkerFunction.cs" />
-    <Compile Include="DemoBase.cs" />
+    <Compile Include="operation\AsynFunction.cs" />
+    <Compile Include="operation\bgWorkerFunction.cs" />
+    <Compile Include="operation\DemoBase.cs" />
     <Compile Include="DemoFactory.cs" />
-    <Compile Include="IDemo.cs" />
+    <Compile Include="Interface\IDemo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

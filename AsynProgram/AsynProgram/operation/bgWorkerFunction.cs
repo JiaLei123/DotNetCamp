@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AsynProgram
 {
-    class bgWorkerFunction : DemoBase
+    class bgWorkerFunction : AsyncDemoBase
     {
 
         public bgWorkerFunction(string subDemo)
@@ -16,7 +16,7 @@ namespace AsynProgram
             subDemoType = subDemo;
         }
 
-        public override void runDemo()
+        public override void runSyncDemo()
         {
             switch (subDemoType)
             {

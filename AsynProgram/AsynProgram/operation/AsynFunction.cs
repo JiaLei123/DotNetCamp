@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace AsynProgram
 {
-    public class AsynFunction : DemoBase
+    public class AsynFunction : AsyncDemoBase
     {
  
         public AsynFunction()

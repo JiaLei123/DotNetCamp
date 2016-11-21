@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace AsynProgram
 {
-    public abstract class DemoBase : IDemo
+    public abstract class AsyncDemoBase : IAsyncDemo
     {
         protected string subDemoType;
 
-        public abstract void runDemo();
+        public abstract void runSyncDemo();
 
         protected static readonly Stopwatch Watch = new Stopwatch();
 

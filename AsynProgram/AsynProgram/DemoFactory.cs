@@ -9,9 +9,9 @@ namespace AsynProgram
 {
     class DemoFactory
     {
-        public static IDemo Creat(Parameter param)
+        public static IAsyncDemo Creat(Parameter param)
         {
-            IDemo result = null;
+            IAsyncDemo result = null;
             switch(param.ParameterType)
             {
                 case "-async":

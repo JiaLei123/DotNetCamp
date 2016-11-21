@@ -23,8 +23,8 @@ namespace AsynProgram
                 List<Parameter> parameterList = ParameterParseUtility.ParameterParseUtility.ParseParameter(args);
                 if(parameterList.Count == 1)
                 {
-                    IDemo a = DemoFactory.Creat(parameterList[0]);
-                    a.runDemo();
+                    IAsyncDemo a = DemoFactory.Creat(parameterList[0]);
+                    a.runSyncDemo();
                 }
                 else
                 {
