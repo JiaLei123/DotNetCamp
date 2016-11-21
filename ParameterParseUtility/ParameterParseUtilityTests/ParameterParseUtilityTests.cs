@@ -73,6 +73,7 @@ namespace ParameterParseUtility.Tests
             {
                 if (a.ParameterType == "-bgworker")
                 {
+                    Assert.IsTrue(a.ParameterTypeTrim == "bgworker");
                     Assert.IsTrue(string.IsNullOrEmpty(a.ParameterString));
                 }
             }
