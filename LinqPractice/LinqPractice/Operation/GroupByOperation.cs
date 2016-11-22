@@ -89,7 +89,6 @@ namespace LinqPractice
             var a_results = list.GroupBy(p => p % 2 == 0).Select(c => c.Sum());
 
             PrintArray("Lambda Splite the Int Array to", a_results);
-
         }
     }
 }
