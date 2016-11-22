@@ -32,6 +32,12 @@ namespace LinqPractice
                 PrintArray("Splite the Int Array to", group);
             }
 
+            var a_result = list.GroupBy(p => p % 2 == 0);
+            foreach (var group in a_result)
+            {
+                PrintArray("Lambda Splite the Int Array to", group);
+            }
+
 
             Console.WriteLine("Group with Embeded Query:");
 
@@ -56,6 +62,21 @@ namespace LinqPractice
                 }
             }
 
+            Console.WriteLine("Lamdba Group with Embeded Query:");
+            //var a_queryNestedGroups = students.GroupBy(p => p.Year, new {}).GroupBy(c => c.lastname);
+            var a_queryNestedGroups = students.GroupBy(p => p.Year).Select(a=> new { a.Key, studend = a.GroupBy(b => b.LastName) });
+            foreach (var outerGroup in a_queryNestedGroups)
+            {
+                Console.WriteLine("DataClass.Student Level = {0}", outerGroup.Key);
+                foreach (var innerGroup in outerGroup.studend)
+                {
+                    Console.WriteLine("\tNames that begin with: {0}", innerGroup.Key);
+                    foreach (var innerGroupElement in innerGroup)
+                    {
+                        Console.WriteLine("\t\t{0} {1}", innerGroupElement.LastName, innerGroupElement.FirstName);
+                    } 
+                }
+            }
 
             Console.WriteLine("Group with Select:");
             var results = from number in list
@@ -64,6 +85,10 @@ namespace LinqPractice
                           select numbergroup.Sum();
 
             PrintArray("Splite the Int Array to", results);
+
+            var a_results = list.GroupBy(p => p % 2 == 0).Select(c => c.Sum());
+
+            PrintArray("Lambda Splite the Int Array to", a_results);
 
         }
     }
