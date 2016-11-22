@@ -38,29 +38,20 @@ namespace AsynProgram
 
             try
             {
-
-                //var runMethods = from method in
-                //                    from type in demoTypes
-                //                    where type.Name.ToLower().StartsWith(parameterList[0].ParameterType.ToLower())
-                //                    select type.GetMethods()
-                //                where method.Name.ToLower().StartsWith(parameterList[0].ParameterString.ToLower())
-                //                select method;
                 var runTypes = from type in demoTypes
-                               where type.Name.ToLower().StartsWith(parameterList[0].ParameterType.ToLower())
+                               where type.Name.ToLower().StartsWith(parameterList[0].ParameterTypeTrim.ToLower())
                                select type;
                 var runType = runTypes.FirstOrDefault();
 
                 var runMethods = from type in demoTypes
-                                 where type.Name.ToLower().StartsWith(parameterList[0].ParameterType.ToLower())
+                                 where type.Name.ToLower().StartsWith(parameterList[0].ParameterTypeTrim.ToLower())
                                  from method in type.GetMethods()
                                  where method.DeclaringType == type && method.Name.ToLower().StartsWith(parameterList[0].ParameterString.ToLower())
                                  select method;
 
-
                 var runMethod = runMethods.FirstOrDefault();
                 if (runType != null && runMethod != null)
                 {
-                    //runType.GetMethods();
                     ConstructorInfo cons = runType.GetConstructor(new Type[] {  });
                     object obj = cons.Invoke(null);
                     runMethod.Invoke(obj, null);
